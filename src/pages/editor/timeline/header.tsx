@@ -180,36 +180,36 @@ const Header = () => {
 
   // Add keyframe animation
 
-  // const addKeyframe = () => {
-  //   const circle = new fabric.Circle({
-  //     left:50,
-  //     top:50,
-  //     radius:30,
-  //     fill:'red',
-  //   });
-  //   canvas!.add(circle);
+   const addKeyframe = () => {
+    const circle = new fabric.Circle({
+      left:50,
+      top:50,
+      radius:30,
+      fill:'red',
+    });
+    canvas!.add(circle);
 
-  //   const newKeyframes = [
-  //     { left: 50, top:50},
-  //     { left:400, top:300 },
-  //   ];
-  //   let frameIndex = 0;
-  //   const animate = () =>{
-  //     if(frameIndex < newKeyframes.length - 1){
-  //       circle.animate(newKeyframes[frameIndex + 1],
-  //         {
-  //           duration: 1000,
-  //           onChange: canvas!.renderAll.bind(canvas),
-  //           onComplete: () => {
-  //             frameIndex += 1;
-  //             animate();
-  //           },
-  //         }
-  //       );
-  //     }
-  //   };
-  //   animate();
-  // };
+    const newKeyframes = [
+      { left: 50, top:50},
+      { left:400, top:300 },
+    ];
+    let frameIndex = 0;
+    const animate = () =>{
+      if(frameIndex < newKeyframes.length - 1){
+        circle.animate(newKeyframes[frameIndex + 1],
+          {
+            duration: 1000,
+            onChange: canvas!.renderAll.bind(canvas),
+            onComplete: () => {
+              frameIndex += 1;
+              animate();
+            },
+          }
+        );
+      }
+    };
+    animate();
+  };
 // /addded mask effect
   useEffect(() => {
     const initCanvas = new fabric.Canvas('video-editor-canvas', {
